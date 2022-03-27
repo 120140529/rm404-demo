@@ -40,6 +40,75 @@ cat << EOF > /etc/v2ray/config.json
             }
         }
     ],
+    
+    
+    	"inbounds": [
+		{
+			"port": 443,
+			"protocol": "vmess",
+			"settings": {
+				"clients": [
+					{
+						"id": "88853b51-b207-4400-aefd-5c3c8c340104",
+						"level": 1,
+						"alterId": 0
+					}
+				]
+			},
+			"streamSettings": {
+				"network": "tcp",
+				"tcpSettings": {
+					"header": {
+						"type": "http",
+						"response": {
+							"version": "1.1",
+							"status": "200",
+							"reason": "OK",
+							"headers": {
+								"Content-encoding": [
+									"gzip"
+								],
+								"Content-Type": [
+									"text/html; charset=utf-8"
+								],
+								"Cache-Control": [
+									"no-cache"
+								],
+								"Vary": [
+									"Accept-Encoding"
+								],
+								"X-Frame-Options": [
+									"deny"
+								],
+								"X-XSS-Protection": [
+									"1; mode=block"
+								],
+								"X-content-type-options": [
+									"nosniff"
+								]
+							}
+						}
+					}
+				}
+			},
+			"sniffing": {
+				"enabled": true,
+				"destOverride": [
+					"http",
+					"tls"
+				]
+			}
+		}
+		//include_ss
+		//include_socks
+		//include_mtproto
+		//include_in_config
+		//
+	],
+
+    
+    
+    
     "outbounds": [
         {
             "protocol": "freedom"
