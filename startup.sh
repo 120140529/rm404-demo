@@ -21,35 +21,35 @@ cat << EOF > /etc/v2ray/config.json
             "statsOutboundDownlink": false
         }
     },
-    "inbounds": [
-        {
-            "port": $PORT,
-            "protocol": "vless",
-            "settings": {
-                "clients": [
-                    {
-                        "id": "$UUID",
-                        "level": 0
-                    }
-                ],
-                 "decryption": "none"
-            },
-            "streamSettings": {
-                "network": "ws",
-                "security": "none"
-            }
-        }
-    ],
+//    "inbounds": [
+//        {
+//           "port": $PORT,
+//            "protocol": "vless",
+//            "settings": {
+//                "clients": [
+//                    {
+//                        "id": "$UUID",
+//                        "level": 0
+//                    }
+//                ],
+//                 "decryption": "none"
+//            },
+//            "streamSettings": {
+//                "network": "ws",
+//                "security": "none"
+//            }
+//        }
+//    ],
     
     
     	"inbounds": [
 		{
-			"port": 443,
+			"port": $PORT,
 			"protocol": "vmess",
 			"settings": {
 				"clients": [
 					{
-						"id": "88853b51-b207-4400-aefd-5c3c8c340104",
+						"id": "$UUID",
 						"level": 1,
 						"alterId": 0
 					}
@@ -105,10 +105,6 @@ cat << EOF > /etc/v2ray/config.json
 		//include_in_config
 		//
 	],
-
-    
-    
-    
     "outbounds": [
         {
             "protocol": "freedom"
